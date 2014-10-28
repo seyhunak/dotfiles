@@ -1,0 +1,27 @@
+[submodule ".janus/closetag"]
+	path = .janus/closetag
+	url = git@github.com:docunext/closetag.vim.git
+[submodule ".janus/delimitMate"]
+	path = .janus/delimitMate
+	url = git@github.com:Raimondi/delimitMate.git
+[submodule ".janus/emmet-vim"]
+	path = .janus/emmet-vim
+	url = git@github.com:mattn/emmet-vim.git
+[submodule ".janus/gitgutter"]
+	path = .janus/gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule ".janus/numbers.vim"]
+	path = .janus/numbers.vim
+	url = git@github.com:myusuf3/numbers.vim.git
+[submodule ".janus/rainbow_parentheses.vim"]
+	path = .janus/rainbow_parentheses.vim
+	url = git@github.com:kien/rainbow_parentheses.vim.git
+[submodule ".janus/tabular"]
+	path = .janus/tabular
+	url = git@github.com:godlygeek/tabular.git
+[submodule ".janus/vim-airline"]
+	path = .janus/vim-airline
+	url = git@github.com:bling/vim-airline.git
+[submodule ".janus/vim-latex"]
+	path = .janus/vim-latex
+	url = git@github.com:lervag/vim-latex.git

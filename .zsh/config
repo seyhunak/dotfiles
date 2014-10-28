@@ -1,0 +1,52 @@
+# load zsh tab completion
+autoload -U compinit
+autoload -Uz vcs_info
+compinit
+
+# report time when command takes more than ...
+REPORTTIME=10
+
+# bind UP and DOWN arrow keys
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# LS_COLORS
+export LS_COLORS="no=00:fi=00:di=1;36:ln=00;35:pi=40;33:so=00;35;33;00:cd=40;33;00:or=40;31;00:ex=00;32:*.tar=00;31:*.tgz=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.zip=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.deb=00;31:*.rpm=00;31:*.jpg=00;35:*.png=00;35:*.gif=00;35:*.bmp=00;35:*.ppm=00;35:*.tga=00;35:*.xbm=00;35:*.xpm=00;35:*.tif=00;35:*.png=00;35:*.mpg=00;35:*.avi=00;35:*.fli=00;35:*.gl=00;35:*.dl=00;35:"
+
+# tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+GIT_DIRTY_COLOR=%F{100}
+GIT_CLEAN_COLOR=%F{100}
+GIT_PROMPT_INFO=%F{012}
+
+ZSH_THEME_GIT_PROMPT_PREFIX=" \u2b60 "
+ZSH_THEME_GIT_PROMPT_SUFFIX="$GIT_PROMPT_INFO"
+ZSH_THEME_GIT_PROMPT_DIRTY=" $GIT_DIRTY_COLOR‚úò"
+ZSH_THEME_GIT_PROMPT_CLEAN=" $GIT_CLEAN_COLOR‚úî"
+
+ZSH_THEME_GIT_PROMPT_ADDED="%F{082}‚úö%f"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%F{166}‚úπ%f"
+ZSH_THEME_GIT_PROMPT_DELETED="%F{160}‚úñ%f"
+ZSH_THEME_GIT_PROMPT_RENAMED="%F{220]‚ûú%f"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%F{082]‚ïê%f"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{190]‚ú≠%f"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$RED%}!"
+
+PROMPT="
+%% "
+
+#PROMPT="
+#%K{green}%F{black} %m %k%f%F{green}%K{yellow}"$'\u2b80'"%k%f%F{black}%K{yellow} %2d %k%f%F{yellow}"$'\u2b80'"%f
+#%k%f%F{white}"'%% '""
+
+## precmd hook
+#function precmd {
+  #vcs_info 'prompt'
+
+  #if [ -z "$vcs_info_msg_0_" ]; then
+    #RPROMPT=''
+  #else
+    #RPROMPT=$POWERLINE_COLOR_FG_WHITE$'\u2b82'"%f$POWERLINE_COLOR_BG_WHITE $POWERLINE_COLOR_FG_GRAY"$'$(git_prompt_info)'""$''" $POWERLINE_COLOR_FG_GRAY"$'\u2b82'"%f%k$POWERLINE_COLOR_BG_GRAY$POWERLINE_COLOR_FG_WHITE "$'$(git_prompt_short_sha) '"%f%k"
+  #fi;
+#}
